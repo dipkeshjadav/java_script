@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram Login</title>
+    <style>
+        /* Base styles */
+        body {
+            margin: 0;
+            height: 100vh;
+            background: url('https://www.91-cdn.com/hub/wp-content/uploads/2023/03/How-to-share-Instagram-profile-on-mobile-and-desktop.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            animation: fadeInBody 1s ease-out;
+        }
+
+        .login-container {
+            background-color: rgba(230, 116, 224, 0.95);
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+            animation: slideIn 1s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            color: #000000;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        /* Color change for labels */
+        .label-user {
+            color: #000000;
+        }
+
+        .label-pass {
+            color: #000000;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            transform: scale(1.05);
+            border-color: #3897f0;
+            background-color: rgba(56, 151, 240, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #3897f0;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2f80ed;
+            transform: scale(1.05);
+            color: #fff;
+        }
+
+        /* Hover effect for the login container */
+        .login-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeInBody {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Animation for the input fields */
+        input,
+        textarea {
+            animation: fadeInInput 1s ease-out forwards;
+        }
+
+        input:nth-child(1),
+        textarea:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        input:nth-child(2),
+        textarea:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        button {
+            animation: fadeInButton 1s ease-out forwards;
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeInInput {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInButton {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+       <b><i> <h2>Instagram Login</h2></i></b>
+        <form id="instagram-login">
+            <label for="USER_ID" class="label-user">USER_ID:</label>
+            <input type="text" id="USER_ID" name="USER_ID" required>
+
+            <label for="password" class="label-pass">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById("instagram-login");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const userid = document.getElementById("USER_ID").value;
+            const password = document.getElementById("password").value;
+            alert(`You have logged in!\nUSER_ID: ${userid}\nPassword: ${password}`);
+            window.location.href = "https://www.instagram.com";
+        });
+    </script>
+</body>
+</html>
